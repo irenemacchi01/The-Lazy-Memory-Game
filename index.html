@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Lazy Memory Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    </head>
+    <body>     
+
+        <div class="win-msg">
+            <h1>YOU WIN!</h1>
+            <button class="restart" onclick="location.reload()">PLAY AGAIN</button>
+        </div>
+
+        <div class="container">
+            <h1>THE LAZY MEMORY GAME</h1>
+            <div class="game-grid"></div>    
+                        
+            <div id="timer">00:00</div>
+
+            <button id="stopBtn" onclick="stopTimer()">STOP</button>
+            <button id="resetBtn" onclick="resetTimer()">RESET</button>
+
+        </div>
+
+        
+        
+
+        <script src="script2.js" async defer></script>
+    </body>
+</html>

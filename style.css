@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat&family=Poppins:wght@500&family=Quicksand&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+h1 {
+    background: linear-gradient(to top right, rgb(189, 189, 247) 30%, rgb(83, 222, 247) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+img{
+    border-radius: 10px;  
+}
+
+body {
+    background: linear-gradient(to top right, rgb(189, 189, 247), rgb(83, 222, 247));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.win-msg {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    z-index: +1;
+    text-align: center;
+    background-color: white;
+    padding: 100px 200px;
+    border-radius: 25px;
+}
+
+.container {
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 10px 100px;
+    border-radius: 10px;
+    box-shadow: 0px -10px 50px 0px rgb(45, 176, 199);   
+    text-shadow: 2px 2px 5px 0px rgb(45, 176, 199); 
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.singleCard {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden; /* Aggiunto overflow:hidden per gestire eventuali immagini di dimensioni diverse */
+    position: relative;
+    perspective: 1000px;
+}
+
+.singleCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fornisce un riassestamento uniforme delle immagini*/
+}
+
+.singleCard.flipCard .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.restart{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#timer {
+    font-size: 16px;
+    color: black;
+    margin-top: 15px;
+}
+
+#stopBtn, #resetBtn {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) { /*Larghezza non supera i 400px (mobile phone)*/
+    h1{
+       font-size: 8px; 
+    }
+
+    .container{
+        width: 300px;
+        height: auto;
+        position: absolute;
+    }
+
+    .game-grid{
+        margin: 0 auto;
+        width: 200px;
+        position: relative;
+        right: 50%;
+    }
+
+    #timer{
+        font-size: 10px;
+    }
+
+    #stopBtn, #resetBtn {
+        font-size: 6px;
+        padding: 2px 5px;
+    }
+}
+
+/*@media screen and (min-width: 800px){} Larghezza supera i 800px (desktop)*/
